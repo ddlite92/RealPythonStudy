@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"
+        "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<!--This file was converted to xhtml by LibreOffice - see https://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.-->
+
+<head profile="http://dublincore.org/documents/dcmi-terms/">
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+    <title xml:lang="en-US">- no title specified</title>
+    <meta name="DCTERMS.title" content="" xml:lang="en-US"/>
+
+    <meta name="DCTERMS.language" content="en-US" scheme="DCTERMS.RFC4646"/>
+    <meta name="DCTERMS.source" content="http://xml.openoffice.org/odf2xhtml"/>
+
+    <meta name="DCTERMS.issued" content="2024-09-06T17:32:16.766000000" scheme="DCTERMS.W3CDTF"/>
+
+    <meta name="DCTERMS.modified" content="2024-09-06T20:43:09.747000000" scheme="DCTERMS.W3CDTF"/>
+
+
+    <meta name="xsl:vendor" content="libxslt"/>
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" hreflang="en"/>
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" hreflang="en"/>
+    <link rel="schema.DCTYPE" href="http://purl.org/dc/dcmitype/" hreflang="en"/>
+    <link rel="schema.DCAM" href="http://purl.org/dc/dcam/" hreflang="en"/>
+
+    <style>
+    table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+    td, th { vertical-align:top; font-size:12pt;}
+    h1, h2, h3, h4, h5, h6 { clear:both;}
+    ol, ul { margin:0; padding:0;}
+    li { list-style: none; margin:0; padding:0;}
+    span.footnodeNumber { padding-right:1em; }
+    span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+    span.heading_numbering { margin-right: 0.8rem; }* { margin:0;}
+    .paragraph-P1{ font-size:12pt; line-height:100%; margin-bottom:0cm; margin-top:0cm; font-family:Barlow; writing-mode:horizontal-tb; direction:ltr;margin-left:0cm; margin-right:0cm; text-align:center ! important; text-indent:0cm; }
+    .paragraph-P2{ font-size:12pt; line-height:100%; margin-bottom:0cm; margin-top:0cm; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;margin-left:0cm; margin-right:0cm; text-align:left ! important; text-indent:0cm; }
+    .paragraph-P3{ font-size:12pt; line-height:100%; margin-bottom:0cm; margin-top:0cm; font-family:'Liberation Serif'; writing-mode:horizontal-tb; direction:ltr;margin-left:0cm; margin-right:0cm; text-indent:0cm; }
+    .paragraph-P4{ font-size:12pt; line-height:100%; margin-bottom:0cm; margin-top:0cm; font-family:Barlow; writing-mode:horizontal-tb; direction:ltr;margin-left:0cm; margin-right:0cm; text-indent:0cm; font-style:normal; }
+    .paragraph-P5{ font-size:12pt; line-height:100%; margin-bottom:0cm; margin-top:0cm; font-family:Barlow; writing-mode:horizontal-tb; direction:ltr;margin-left:0cm; margin-right:0cm; text-indent:0cm; }
+    .text-Emphasis{ font-style:italic; }
+    .text-Strong_20_Emphasis{ font-weight:bold; }
+    .text-T1{ font-style:normal; font-weight:bold; }
+    .text-T2{ font-family:Barlow; }
+    .text-T3{ font-family:Barlow; font-style:normal; }
+    .text-T4{ font-family:Barlow; font-style:normal; }
+    .text-T6{ font-family:Barlow; font-weight:bold; }
+    .text-T7{ font-weight:bold; }
+    /* ODF styles with no properties representable as CSS:
+    .Endnote_20_Symbol .Footnote_20_Symbol .T5  { } */
+
+    </style>
+</head>
+
+<body dir="ltr" style="max-width:21.001cm;margin-top:2cm; margin-bottom:2cm; margin-left:2cm; margin-right:2cm; ">
+
+<p class="paragraph-P1"><span class="text-T1">Handling Compositing (when present)</span></p>
+
+<p class="paragraph-P2"><span class="text-T2"><br/></span><span class="text-T3">The scene’s compositing node tree combines the rendered view layers </span><span
+        class="text-T4">via</span><span class="text-T3"> </span><span class="text-Emphasis"><span class="text-T3">Render Layer</span></span><span
+        class="text-T5"> </span><span class="text-T3">nodes. When rendering view layers independently, the node tree may not always function as expected, since only the </span><span
+        class="text-Emphasis"><span class="text-T3">Render Layer</span></span><span class="text-T5"> </span><span
+        class="text-T3">node for the view layer being rendered will actually produce any output.</span></p>
+<p class="paragraph-P3"> </p>
+<p class="paragraph-P4">B-renderon provides different options on how to handle this:</p>
+<p class="paragraph-P3"> </p>
+<p class="paragraph-P3"><span class="text-T6">1) Auto (default):</span> <span class="text-T2">Automatically disable compositing if multiple </span><span
+        class="text-Emphasis"><span class="text-T2">Render Layer</span></span> <span class="text-T2">nodes are present. If there is exactly one, only use compositing when rendering the view layer assigned to that render layer node.</span>
+</p>
+<p class="paragraph-P3"> </p>
+<p class="paragraph-P3"><span class="text-T6">2) Replicate:</span> <span class="text-T2">If only one </span><span
+        class="text-Emphasis"><span class="text-T2">Render Layer</span></span> <span class="text-T2">node is present, it reassigns it to match the view layer currently being rendered, ensuring the same compositing setup is applied across view layers. Similar to Auto, this option disables compositing if multiple </span><span
+        class="text-Emphasis"><span class="text-T2">Render Layer</span></span> <span class="text-T2">nodes exist.</span>
+</p>
+<p class="paragraph-P3"> </p>
+<p class="paragraph-P5"><span class="text-T7">3) Disable: </span>Just disable compositing altogether.</p>
+<p class="paragraph-P3"> </p>
+<p class="paragraph-P5"><span class="text-T7">4) Leave as is: </span>Leaves the compositing setup unchanged, rendering
+    the view layer with the existing node tree configuration. This option is generally not recommended, as it may
+    produce unexpected results.</p>
+<p class="paragraph-P3"> </p>
+<p class="paragraph-P3"><span class="text-Strong_20_Emphasis"><span class="text-T2">Note</span></span><span
+        class="text-T2">: If the scene doesn't use compositing, all of these options will have no effect, and the render will proceed as normal. </span>
+</p>
+<p class="paragraph-P3"> </p></body>
+
+</html>

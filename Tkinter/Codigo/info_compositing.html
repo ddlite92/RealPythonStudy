@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.0.3 (Windows)"/>
+	<meta name="created" content="2024-09-06T17:32:16.766000000"/>
+	<meta name="changed" content="2024-09-06T20:57:32.811000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent; background: transparent }
+		em { font-style: italic }
+		strong { font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-GB" link="#000080" vlink="#800000" dir="ltr"><p align="center" style="line-height: 100%; margin-bottom: 0cm">
+<font face="Barlow"><span style="font-variant: normal"><span style="font-style: normal"><b>Handling
+Compositing (when present)</b></span></span></font></p>
+<p align="left" style="line-height: 100%; margin-bottom: 0cm"><font face="Barlow"><br/>
+</font><span style="font-variant: normal"><font face="Barlow"><span style="font-style: normal">The
+scene’s compositing node tree combines the rendered view layers </span></font></span><span style="font-variant: normal"><font face="Barlow"><span style="font-style: normal">via</span></font></span><span style="font-variant: normal"><font face="Barlow"><span style="font-style: normal">
+</span></font></span><em><span style="font-variant: normal"><font face="Barlow"><span style="font-style: normal">Render
+Layer</span></font></span></em><span style="font-variant: normal">
+</span><span style="font-variant: normal"><font face="Barlow"><span style="font-style: normal">nodes.
+When rendering view layers independently, the node tree may not
+always function as expected, since only the </span></font></span><em><span style="font-variant: normal"><font face="Barlow"><span style="font-style: normal">Render
+Layer</span></font></span></em><span style="font-variant: normal">
+</span><span style="font-variant: normal"><font face="Barlow"><span style="font-style: normal">node
+for the view layer being rendered will actually produce any output.</span></font></span></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="font-variant: normal; font-style: normal; line-height: 100%; margin-bottom: 0cm">
+<font face="Barlow">B-renderon provides different options<strong> </strong><strong><span style="font-weight: normal">for</span></strong>
+how to handle this:</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Barlow"><b>1)
+Auto (default):</b></font> <font face="Barlow">Automatically disable
+compositing if multiple </font><em><font face="Barlow">Render Layer</font></em>
+<font face="Barlow">nodes are present. If there is exactly one, only
+use compositing when rendering the view layer assigned to that render
+layer node.</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Barlow"><b>2)
+Replicate:</b></font> <font face="Barlow">If only one </font><em><font face="Barlow">Render
+Layer</font></em> <font face="Barlow">node is present, it reassigns
+it to match the view layer currently being rendered, ensuring the
+same compositing setup is applied across view layers. Similar to
+Auto, this option disables compositing if multiple </font><em><font face="Barlow">Render
+Layer</font></em> <font face="Barlow">nodes exist.</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Barlow"><b>3)
+Disable: </b>Just disable compositing altogether.</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Barlow"><b>4)
+Leave as is: </b>Leaves the compositing setup unchanged, rendering
+the view layer with the existing node tree configuration. This option
+is generally not recommended, as it may produce unexpected results.</font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><strong><font face="Barlow">Note</font></strong><font face="Barlow">:
+If the scene doesn't use compositing, all of these options will have
+no effect, and the render will proceed as normal. </font>
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<RCC>
+  <qresource>
+    <file>iconos/icoapp.ico</file>
+    <file>iconos/ico_configuracion.png</file>
+    <file>iconos/ico_info.png</file>
+    <file>iconos/icoestado_renderizando.png</file>
+    <file>iconos/icoestado_fallado.png</file>
+    <file>iconos/icoestado_interrumpido.png</file>
+    <file>iconos/icoestado_terminado.png</file>
+    <file>iconos/icoestado_nocomenzado.png</file>
+  </qresource>
+</RCC>
